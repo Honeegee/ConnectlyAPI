@@ -42,3 +42,7 @@ wheels/
 venv/
 ENV/
 env/
+
+# SSL Certificates
+key.pem
+cert.pem

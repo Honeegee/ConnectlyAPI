@@ -25,6 +25,21 @@ SECRET_KEY = 'django-insecure-&d1u3303j@2difodew=n--(du#wb*d4y_@j-8v#&v92l*w!6js
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# HTTPS Settings
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Password validation
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+
 ALLOWED_HOSTS = []
 
 
@@ -41,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt', 
     'corsheaders',
     'posts',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
